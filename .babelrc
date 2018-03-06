@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        "react-hot-loader/babel"
+    ],
+    "presets": [
+        ["env", {
+            "node": "current",
+            "browsers": [
+                "Last 2 versions",
+                "ie >= 11",
+                "Edge >= 13",
+                "Safari >= 8",
+                "iOS >= 8"
+            ]
+        }],
+        "stage-2",
+        "react"
+    ]
+}
