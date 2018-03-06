@@ -33,7 +33,7 @@ const config = {
                             cacheDirectory: true,
 
                             plugins: [
-                                'react-hot-loader/babel',
+                                ...(isProduction ? ['react-hot-loader/babel'] : []),
                                 'dynamic-import-webpack',
                             ],
 
