@@ -11,7 +11,7 @@ const ColdRouter = () => (
 
 const HotRouter = hot(module)(ColdRouter);
 
-const Common = (props) => {
+const App = (props) => {
   const { hotReload } = props;
   return (
     <div>
@@ -20,4 +20,4 @@ const Common = (props) => {
   );
 };
 
-export default Common;
+export default App;
