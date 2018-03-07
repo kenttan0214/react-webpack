@@ -10,8 +10,7 @@ if (!production) {
   (require('./server.webpack').default)(app);
 }
 
-app.use('/', serveStatic(process.cwd() + '/public'));
-app.use('/dist', serveStatic(process.cwd() + '/dist/app'));
+app.use('/', serveStatic(process.cwd() + '/dist/app'));
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log('server running on ',PORT);
