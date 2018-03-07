@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const process = require('process');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const sharedConfig = require('./webpack.config.shared.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -33,7 +34,7 @@ const config = {
                             cacheDirectory: true,
 
                             plugins: [
-                                'react-hot-loader/babel',
+                                ...(isProduction ? ['react-hot-loader/babel'] : []),
                                 'dynamic-import-webpack',
                             ],
 
@@ -60,6 +61,10 @@ const config = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
             'process.env.TARGET': JSON.stringify('BROWSER')
+        }),
+        new HtmlWebpackPlugin({  // Also generate a test.html
+          filename: 'index.html',
+          template: 'public/index.html'
         })
     ],
 };
