@@ -63,8 +63,8 @@ const config = {
             'process.env.TARGET': JSON.stringify('BROWSER')
         }),
         new HtmlWebpackPlugin({  // Also generate a test.html
-          filename: 'index.html',
-          template: 'public/index.html'
+            filename: 'index.html',
+            template: 'public/index.html'
         })
     ],
 };

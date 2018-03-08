@@ -2,7 +2,7 @@ module.exports = {
     plugins: [
         require('postcss-import')({
             path: [
-                `src/common/styles`
+                'src/common/styles'
             ]
         }),
         require('postcss-for'),

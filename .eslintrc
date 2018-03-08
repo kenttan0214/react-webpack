@@ -1,0 +1,61 @@
+{
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
+    "plugins": [
+        "react"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "globals": {
+        "spyOn": true,
+        "beforeEach": true,
+        "afterEach": true,
+        "describe": true,
+        "it": true,
+        "expect": true,
+        "jasmine": true,
+        "oDynamicContent": true
+    },
+    "rules": {
+        "strict": "off",
+        "quotes": ["error", "single"],
+        "indent": ["error", 4],
+        "max-depth": ["error", 3],
+        "max-statements": ["error", 15],
+        "complexity": ["error", 10],
+        "max-params": ["error", 3],
+        "new-cap": "error",
+        "no-bitwise": "error",
+        "radix": "error",
+        "max-nested-callbacks": ["error", 4],
+        "no-nested-ternary": "error",
+        "keyword-spacing": ["error", { "before": true, "after": true }],
+        "space-before-blocks": ["error", "always"],
+        "space-before-function-paren": ["error", "always"],
+        "no-underscore-dangle": "off",
+        "jsx-quotes": ["error", "prefer-double"],
+        "no-trailing-spaces": "error",
+        "no-multiple-empty-lines": ["error", {"max": 3, "maxEOF": 1}],
+        "eol-last": "error",
+        "semi": ["error", "always"],
+
+        "react/display-name": "off",
+        "react/jsx-boolean-value": "error",
+        "react/jsx-no-undef": "error",
+        "react/jsx-sort-props": "error",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/no-did-mount-set-state": "error",
+        "react/no-did-update-set-state": "error",
+        "react/no-multi-comp": "error",
+        "react/no-unknown-property": "error",
+        "react/prop-types": "error",
+        "react/react-in-jsx-scope": "error",
+        "react/self-closing-comp": "error",
+        "react/sort-comp": "error",
+        "react/jsx-wrap-multilines": "error",
+    }
+}
