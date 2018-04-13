@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import styles from './login.css';
+
 @connect(
     (state, ownProps) => {
         return {
@@ -16,7 +18,7 @@ import { connect } from 'react-redux';
 export default class Login extends Component {
     render () {
         return (
-            <div>
+            <div className={styles.textColor}>
               This is login component! {this.props.name}
             </div>
         );
