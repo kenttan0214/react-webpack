@@ -1,6 +1,6 @@
 {
     "plugins": [
-        "react-hot-loader/babel"
+        "transform-decorators-legacy"
     ],
     "presets": [
         ["env", {

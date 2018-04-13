@@ -17,39 +17,31 @@ var config = {
     output: sharedConfig.output,
     externals: [nodeExternals()],
     module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            cacheDirectory: true
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.(png|gif|jpg|jpeg|ico|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            emitFiles: false
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.css$/,
-                include: /localisations/,
-                use: [
-                    'css-loader/locals',
-                    'postcss-loader'
-                ]
-            }
-        ]
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: [{
+                loader: 'babel-loader',
+                options: {
+                    cacheDirectory: true
+                }
+            }]
+        }, {
+            test: /\.(png|gif|jpg|jpeg|ico|svg)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    emitFiles: false
+                }
+            }]
+        }, {
+            test: /\.css$/,
+            include: /localisations/,
+            use: [
+                'css-loader/locals',
+                'postcss-loader'
+            ]
+        }]
     },
     stats: sharedConfig.stats,
     plugins: [
@@ -65,32 +57,30 @@ if (process.env.NODE_ENV === 'production') {
     config.module.rules.push({
         test: /\.css$/,
         exclude: /localisations/,
-        use: [
-            {
-                loader: 'css-loader/locals',
-                options: {
-                    importLoaders: 1,
-                    localIdentName: '[hash:base64:5]',
-                    modules: true
-                }
-            },
-            'postcss-loader'
+        use: [{
+            loader: 'css-loader/locals',
+            options: {
+                importLoaders: 1,
+                localIdentName: '[hash:base64:5]',
+                modules: true
+            }
+        },
+        'postcss-loader'
         ]
     });
 } else {
     config.module.rules.push({
         test: /\.css$/,
         exclude: /localisations/,
-        use: [
-            {
-                loader: 'css-loader/locals',
-                options: {
-                    importLoaders: 1,
-                    localIdentName: '[name]__[local]___[hash:base64:5]',
-                    modules: true
-                }
-            },
-            'postcss-loader'
+        use: [{
+            loader: 'css-loader/locals',
+            options: {
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                modules: true
+            }
+        },
+        'postcss-loader'
         ]
     });
 }

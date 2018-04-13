@@ -7,13 +7,11 @@ import { Provider as ReduxProvider } from 'react-redux';
 import routes from './routes';
 import { configureStore } from './store';
 
-const compiledRoutes = routes();
-
-const store = configureStore(hashHistory, window.__INITIAL_STATE__);
+const store = configureStore(hashHistory);
 const history = syncHistoryWithStore(hashHistory, store);
 
 const ColdRouter = () => (
-    <Router history={history} routes={compiledRoutes}/>
+    <Router history={history} routes={routes()}/>
 );
 
 const HotRouter = hot(module)(ColdRouter);

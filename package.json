@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:fe": "./node_modules/.bin/webpack --progress",
-    "build:be": "./node_modules/.bin/webpack --progress --config webpack.config.server.js",
+    "build:fe": "webpack --progress",
+    "build:be": "webpack --progress --config webpack.config.server.js",
     "start": "node ./dist/app/server.js",
-    "dev": "rimraf ./dist && npm run build:fe && npm run build:be && npm start",
-    "lint:base": "./node_modules/.bin/eslint *.js src mocks --ext .js,.jsx",
-    "lint": "npm run lint:base -- --fix"
+    "dev": "yarn remove:dist && yarn build:fe && yarn build:be && yarn start",
+    "lint:base": "eslint *.js src mocks --ext .js,.jsx",
+    "lint": "npm run lint:base -- --fix",
+    "remove:dist": "rimraf ./dist"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.3",
     "babel-plugin-dynamic-import-webpack": "^1.0.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-optimize": "^1.0.1",

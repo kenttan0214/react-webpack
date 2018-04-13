@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import Home from './components/home';
-import Login from './components/login';
-import Main from './components/main';
+import Home from './containers/home';
+import Login from './containers/login';
+import Main from './containers/main';
 
 function routes () {
     return (
