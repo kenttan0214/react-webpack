@@ -84,7 +84,7 @@ const config = {
             filename: 'index.html',
             template: 'public/index.html'
         }),
-        new ExtractTextPlugin({filename: '[name].[contenthash].css'})
+        new ExtractTextPlugin({filename: '[name].[hash].css'})
     ],
 };
 
